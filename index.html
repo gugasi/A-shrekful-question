@@ -6,8 +6,11 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/png" href="./images/favicon.png">
 </head>
-<body>
+<body onload="draw()">
     <div class="container">
+        <canvas id="nightSky"></canvas>
+        <div id="starsSmall"></div>
+        <div id="fallingStar"></div>
         <h1>Will you be the Fiona to my Shrek?</h1>
         <div class="buttons">
             <button id="no-btn">No</button>
