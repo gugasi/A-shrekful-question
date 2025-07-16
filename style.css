@@ -1,29 +1,38 @@
 body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
     font-family: 'Georgia', serif;
     text-align: center;
     margin: 0;
-    background-image: url('https://i.etsystatic.com/39356543/r/il/a7b55e/4853549345/il_fullxfull.4853549345_d8p6.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column; /* Added to stack elements vertically */
     padding: 30px;
-    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    margin: 50px auto;
     max-width: 600px;
+    margin: 50px auto;
 }
 
 h1 {
     font-size: 36px;
     margin-bottom: 30px;
     color: #7cfc00; /* Shrek Green */
+    z-index: 1; /* Ensure text is above the background */
 }
 
 .buttons {
     margin: 20px;
+    z-index: 1; /* Ensure buttons are above the background */
 }
 
 button {
@@ -48,17 +57,19 @@ button:hover {
     border: 2px solid #7cfc00;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    padding: 40px; /* Increased padding */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
+    max-width: 800px; /* Increased max-width */
+    width: 90%; /* Added for responsiveness */
 }
 
 .popup h2 {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 24px;
+    font-size: 28px; /* Increased font size */
     color: #000;
 }
 
@@ -69,7 +80,7 @@ button:hover {
 }
 
 .gif-container img {
-    max-width: 45%;
+    max-width: 48%; /* Adjusted max-width */
     border-radius: 10px;
 }
 
@@ -80,4 +91,15 @@ button:hover {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes hide {
+    from {
+        transform: rotate(-40deg) translate3d(360px, 0, 0);
+        opacity: 0.8;
+    }
+    to {
+        transform: rotate(-40deg) translate3d(-360px, 0, 0);
+        opacity: 0;
+    }
 }
